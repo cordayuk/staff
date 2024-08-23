@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Staff List</title>
+  <link th:href="@{~/css/main.css}" rel="stylesheet"/>
+</head>
+<body>
+<div id="main-content">
+  <h2>Staff</h2>
+  <div id="nav">
+<!--    <form method="post" th:action="@{/staff/create}">-->
+<!--      <input type="submit" class="button" value="Create New Staff Member"/>-->
+<!--    </form>-->
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Role</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+<!--    The ${staffList} grabs the model attribute staffList From the Staff Controller.-->
+    <tr th:each="staff : ${staffList}">
+<!--      It returns a list of StaffMember which we then display the fields for.-->
+      <td th:text="${staff.id}"></td>
+      <td th:text="${staff.name}"></td>
+      <td th:text="${staff.role}"></td>
+      <td>
+<!--        <a th:href="@{/staff/{id}(id=${staff.id})}">View</a>-->
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
